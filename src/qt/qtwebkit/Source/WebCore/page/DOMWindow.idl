@@ -50,7 +50,7 @@
     [Replaceable] readonly attribute BarProp toolbar;
     [Replaceable] readonly attribute Navigator navigator;
     [Replaceable] readonly attribute Navigator clientInformation;
-    readonly attribute Crypto crypto;
+    [Replaceable] readonly attribute Crypto crypto;
 #if !defined(LANGUAGE_CPP) || !LANGUAGE_CPP
     [DoNotCheckSecurity, CustomSetter] attribute Location location;
 #endif
@@ -161,8 +161,8 @@
 
     readonly attribute DOMApplicationCache applicationCache;
 
-    [GetterRaisesException] readonly attribute Storage sessionStorage;
-    [GetterRaisesException] readonly attribute Storage localStorage;
+    [GetterRaisesException, Replaceable] readonly attribute Storage sessionStorage;
+    [GetterRaisesException, Replaceable] readonly attribute Storage localStorage;
 
 #if defined(ENABLE_ORIENTATION_EVENTS) && ENABLE_ORIENTATION_EVENTS
     // This is the interface orientation in degrees. Some examples are:
